@@ -57,6 +57,6 @@ Ready for dashboards in Power BI / Tableau
 SQL Server (Database + DWH)
 SSIS / Stored Procedures for ETL
 T-SQL
-Power BI / Tableau (optional for dashboards)
+Power BI
 Data Modeling (Star Schema, SCD Types)
 
