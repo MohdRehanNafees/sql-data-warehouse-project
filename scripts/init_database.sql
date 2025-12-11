@@ -22,7 +22,7 @@ Use master;
 Go
 
 -- Drop and recreate the 'DataWarehouse' database
-IF EXIST (SELECT 1 FROM sys.database WHERE name = DataWarehouse)
+IF EXISTS (SELECT 1 FROM sys.database WHERE name = DataWarehouse)
 Begin
 	ALTER DATABASE DataWarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
 END;
