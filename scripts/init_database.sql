@@ -18,27 +18,24 @@ Use this script only in development or test environments, or ensure you have tak
 */
 
 
-Use master;
-Go
+USE master;
+GO
 
 -- Drop and recreate the 'DataWarehouse' database
-IF EXISTS (SELECT 1 FROM sys.database WHERE name = DataWarehouse)
-Begin
-	ALTER DATABASE DataWarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'DataWarehouse')
+BEGIN
+    ALTER DATABASE DataWarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE DataWarehouse;
 END;
-GO;
+GO
 
 -- Create database
+CREATE DATABASE DataWarehouse;
+GO
 
-Create database Datawarehouse;
-Use Datawarehouse;
+USE DataWarehouse;
+GO
 
 -- Create schema
-
-Create schema bronze;
-go
-Create schema silver;
-go
-Create schema gold;
-go
-
+CREATE SCHEMA bronze;
+GO
